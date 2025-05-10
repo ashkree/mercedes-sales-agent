@@ -1,0 +1,50 @@
+{"id": "a-class_hatchback", "text": "Model: A-Class Hatchback | Body Style: Hatchback | Powertrain: Petrol | Seats: 5 | Starting Price: AED 223900"}
+{"id": "a-class_sedan", "text": "Model: A-Class Sedan | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 228900"}
+{"id": "a_35_amg", "text": "Model: A 35 AMG | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 291900"}
+{"id": "cla_250", "text": "Model: CLA 250 | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 249900"}
+{"id": "cla_35_amg", "text": "Model: CLA 35 AMG | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 325000"}
+{"id": "cla_45_s_amg", "text": "Model: CLA 45 S AMG | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 419900"}
+{"id": "cle_200_coupe", "text": "Model: CLE 200 Coupe | Body Style: Coupe | Powertrain: Petrol | Seats: 4 | Starting Price: AED 329000"}
+{"id": "c_200", "text": "Model: C 200 | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 271900"}
+{"id": "c_250", "text": "Model: C 250 | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 296000"}
+{"id": "c_43_amg", "text": "Model: C 43 AMG | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 379000"}
+{"id": "c_63_s_amg", "text": "Model: C 63 S AMG | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 543000"}
+{"id": "c_200_cabriolet", "text": "Model: C 200 Cabriolet | Body Style: Cabriolet | Powertrain: Petrol | Seats: 4 | Starting Price: AED 327900"}
+{"id": "e_200", "text": "Model: E 200 | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 388900"}
+{"id": "e_300", "text": "Model: E 300 | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 435900"}
+{"id": "s_500", "text": "Model: S 500 | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 725900"}
+{"id": "s_63_amg", "text": "Model: S 63 AMG | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 1194000"}
+{"id": "s_63_amg_coupe", "text": "Model: S 63 AMG Coupe | Body Style: Coupe | Powertrain: Petrol | Seats: 4 | Starting Price: AED 945000"}
+{"id": "gla_200", "text": "Model: GLA 200 | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 270900"}
+{"id": "gla_35_amg", "text": "Model: GLA 35 AMG | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 309000"}
+{"id": "glb_200", "text": "Model: GLB 200 | Body Style: SUV | Powertrain: Petrol | Seats: 7 | Starting Price: AED 249000"}
+{"id": "glb_250", "text": "Model: GLB 250 | Body Style: SUV | Powertrain: Petrol | Seats: 7 | Starting Price: AED 315900"}
+{"id": "glc_250_4matic", "text": "Model: GLC 250 4MATIC | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 352900"}
+{"id": "glc_300_4matic", "text": "Model: GLC 300 4MATIC | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 378900"}
+{"id": "glc_43_amg", "text": "Model: GLC 43 AMG | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 406900"}
+{"id": "glc_63_s_amg", "text": "Model: GLC 63 S AMG | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 550900"}
+{"id": "gle_450_4matic", "text": "Model: GLE 450 4MATIC | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 476900"}
+{"id": "gle_53_amg_4matic+", "text": "Model: GLE 53 AMG 4MATIC+ | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 576000"}
+{"id": "gle_63_s_amg_4matic+", "text": "Model: GLE 63 S AMG 4MATIC+ | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 840900"}
+{"id": "gls_450_4matic", "text": "Model: GLS 450 4MATIC | Body Style: SUV | Powertrain: Petrol | Seats: 7 | Starting Price: AED 560900"}
+{"id": "gls_63_amg_4matic+", "text": "Model: GLS 63 AMG 4MATIC+ | Body Style: SUV | Powertrain: Petrol | Seats: 7 | Starting Price: AED 821500"}
+{"id": "g_63_amg", "text": "Model: G 63 AMG | Body Style: SUV | Powertrain: Petrol | Seats: 5 | Starting Price: AED 1215000"}
+{"id": "eqa_250", "text": "Model: EQA 250 | Body Style: SUV | Powertrain: Electric | Seats: 5 | Starting Price: AED 271900"}
+{"id": "eqa_250+_4matic", "text": "Model: EQA 250+ 4MATIC | Body Style: SUV | Powertrain: Electric | Seats: 5 | Starting Price: AED 299900"}
+{"id": "eqb_350_4matic", "text": "Model: EQB 350 4MATIC | Body Style: SUV | Powertrain: Electric | Seats: 7 | Starting Price: AED 343900"}
+{"id": "eqe_53_amg_4matic+", "text": "Model: EQE 53 AMG 4MATIC+ | Body Style: Sedan | Powertrain: Electric | Seats: 5 | Starting Price: AED 629900"}
+{"id": "eqe_suv_350_4matic", "text": "Model: EQE SUV 350 4MATIC | Body Style: SUV | Powertrain: Electric | Seats: 5 | Starting Price: AED 415000"}
+{"id": "eqe_suv_500_4matic", "text": "Model: EQE SUV 500 4MATIC | Body Style: SUV | Powertrain: Electric | Seats: 5 | Starting Price: AED 455000"}
+{"id": "eqe_suv_53_amg_4matic+", "text": "Model: EQE SUV 53 AMG 4MATIC+ | Body Style: SUV | Powertrain: Electric | Seats: 5 | Starting Price: AED 597900"}
+{"id": "eqs_450+", "text": "Model: EQS 450+ | Body Style: Sedan | Powertrain: Electric | Seats: 5 | Starting Price: AED 698900"}
+{"id": "eqs_580_4matic", "text": "Model: EQS 580 4MATIC | Body Style: Sedan | Powertrain: Electric | Seats: 5 | Starting Price: AED 770900"}
+{"id": "eqs_suv_450+", "text": "Model: EQS SUV 450+ | Body Style: SUV | Powertrain: Electric | Seats: 7 | Starting Price: AED 694901"}
+{"id": "amg_gt_43_4-door_coupe", "text": "Model: AMG GT 43 4-Door Coupe | Body Style: Coupe | Powertrain: Petrol | Seats: 4 | Starting Price: AED 559900"}
+{"id": "amg_gt_53_4-door_coupe", "text": "Model: AMG GT 53 4-Door Coupe | Body Style: Coupe | Powertrain: Petrol | Seats: 4 | Starting Price: AED 641900"}
+{"id": "amg_gt_63_s_4-door_coupe", "text": "Model: AMG GT 63 S 4-Door Coupe | Body Style: Coupe | Powertrain: Petrol | Seats: 4 | Starting Price: AED 1032900"}
+{"id": "sl_43_amg_roadster", "text": "Model: SL 43 AMG Roadster | Body Style: Roadster | Powertrain: Petrol | Seats: 2 | Starting Price: AED 538900"}
+{"id": "sl_55_amg_roadster", "text": "Model: SL 55 AMG Roadster | Body Style: Roadster | Powertrain: Petrol | Seats: 2 | Starting Price: AED 769000"}
+{"id": "sl_63_amg_roadster", "text": "Model: SL 63 AMG Roadster | Body Style: Roadster | Powertrain: Petrol | Seats: 2 | Starting Price: AED 810000"}
+{"id": "maybach_s_580_4matic", "text": "Model: Maybach S 580 4MATIC | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 1175900"}
+{"id": "maybach_s_680_4matic", "text": "Model: Maybach S 680 4MATIC | Body Style: Sedan | Powertrain: Petrol | Seats: 5 | Starting Price: AED 1300900"}
+{"id": "maybach_gls_600_4matic", "text": "Model: Maybach GLS 600 4MATIC | Body Style: SUV | Powertrain: Petrol | Seats: 7 | Starting Price: AED 1090900"}
