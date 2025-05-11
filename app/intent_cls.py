@@ -46,6 +46,15 @@ class IntentSentimentClassifier:
         """
         Classify customer intent using zero-shot classification and keyword cues.
         """
+        # Handle empty input
+        if not text or text.strip() == "":
+            return {
+                "type": "intent",
+                "label": "exit",
+                "confidence": 1.0,
+                "all_scores": {"exit": 1.0}
+            }
+
         result = self.intent_model(text, list(self.hypotheses.values()))
 
         label_scores = {
@@ -76,6 +85,14 @@ class IntentSentimentClassifier:
         """
         Classify sentiment as POSITIVE or NEGATIVE.
         """
+        # Handle empty input
+        if not text or text.strip() == "":
+            return {
+                "type": "sentiment",
+                "label": "NEUTRAL",
+                "score": 0.5
+            }
+
         result = self.sentiment_model(text)[0]
         return {
             "type": "sentiment",
