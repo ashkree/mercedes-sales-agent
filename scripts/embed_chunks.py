@@ -7,18 +7,21 @@ import faiss
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 
-DOCSTORE_PATH = "data/raw/docstore.jsonl"
-FAISS_INDEX_PATH = "data/faiss/index.bin"
-ID_MAP_PATH = "data/faiss/id_map.json"
+DOCSTORE_PATH = "../data/raw/docstore.jsonl"
+FAISS_INDEX_PATH = "../data/faiss/index.bin"
+ID_MAP_PATH = "../data/faiss/id_map.json"
 MODEL_NAME = "BAAI/bge-base-en-v1.5"
+
 
 def load_chunks(docstore_path):
     with open(docstore_path, "r") as f:
         return [json.loads(line.strip()) for line in f]
 
+
 def embed_texts(texts, model_name):
     model = SentenceTransformer(model_name)
     return model.encode(texts, show_progress_bar=True)
+
 
 def build_faiss_index(embeddings):
     dim = embeddings.shape[1]
@@ -26,13 +29,16 @@ def build_faiss_index(embeddings):
     index.add(embeddings)
     return index
 
+
 def save_index(index, path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     faiss.write_index(index, path)
 
+
 def save_id_map(ids, path):
     with open(path, "w") as f:
         json.dump(ids, f)
+
 
 def main():
     print("Loading chunks...")
@@ -54,6 +60,6 @@ def main():
 
     print("✅ Embedding completed.")
 
+
 if __name__ == "__main__":
     main()
-

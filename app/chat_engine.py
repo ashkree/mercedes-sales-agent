@@ -2,7 +2,7 @@
 
 from app.intent_cls import IntentSentimentClassifier
 from app.query_interface import search
-from app.response_handler import generate_llama_response
+from app.llm_backend import generate
 
 intent_clf = IntentSentimentClassifier()
 
@@ -37,4 +37,4 @@ def handle_user_input(user_input: str) -> str:
         chunks = []
 
     prompt = generate_prompt(user_input, intent, sentiment, chunks)
-    return generate_llama_response(prompt)
+    return generate(prompt)
