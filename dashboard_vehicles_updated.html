@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard</title>
+<style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --success: #2ecc71;
+      --danger: #e74c3c;
+      --warning: #f39c12;
+      --info: #5bc0de;
+      --light: #ecf0f1;
+      --dark: #34495e;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+    
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .header {
+      grid-column: span 12;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--primary);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .card-body {
+      min-height: 200px;
+    }
+    
+    .metric-value {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 15px 0;
+      color: var(--primary);
+    }
+    
+    .sentiment-card {
+      grid-column: span 4;
+    }
+    
+    .calls-card {
+      grid-column: span 4;
+    }
+    
+    .conversion-card {
+      grid-column: span 4;
+    }
+    
+    .sentiment-analysis {
+      grid-column: span 6;
+    }
+    
+    .key-phrases {
+      grid-column: span 6;
+    }
+    
+    .recent-calls {
+      grid-column: span 8;
+    }
+    
+    .vehicle-interest {
+      grid-column: span 4;
+    }
+    
+    .chart-container {
+      height: 200px;
+      position: relative;
+    }
+    
+    .sentiment-chart {
+      display: flex;
+      height: 100%;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+    
+    .sentiment-bar {
+      width: 18%;
+      background: linear-gradient(to top, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db);
+      border-radius: 4px 4px 0 0;
+      position: relative;
+    }
+    
+    .sentiment-label {
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray);
+      text-align: center;
+      width: 70px;
+    }
+    
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .table th, .table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .table th {
+      background-color: var(--light);
+      font-weight: 600;
+    }
+    
+    .table tr:hover {
+      background-color: #f9f9f9;
+    }
+    
+    .badge {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .badge-success {
+      background-color: rgba(46, 204, 113, 0.2);
+      color: var(--success);
+    }
+    
+    .badge-warning {
+      background-color: rgba(243, 156, 18, 0.2);
+      color: var(--warning);
+    }
+    
+    .badge-danger {
+      background-color: rgba(231, 76, 60, 0.2);
+      color: var(--danger);
+    }
+    
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .tag {
+      padding: 5px 12px;
+      background-color: rgba(52, 152, 219, 0.1);
+      color: var(--secondary);
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    
+    .progress-container {
+      width: 100%;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    
+    .progress-bar {
+      height: 10px;
+      border-radius: 5px;
+      background-color: var(--secondary);
+    }
+    
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    
+    .conversation-sample {
+      max-height: 150px;
+      overflow-y: auto;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 14px;
+      background-color: #f9f9f9;
+      margin-top: 10px;
+    }
+    
+    .user, .ai {
+      margin-bottom: 8px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    
+    .user {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+    
+    .ai {
+      background-color: rgba(46, 204, 113, 0.1);
+    }
+  </style>
+</head>
+<body>
+<div class="dashboard">
+<div class="header">
+<h1>AI CRM Dashboard</h1>
+<div>Live Demo | Last Updated: May 11, 2025</div>
+</div>
+<!-- Key Metrics Row -->
+<div class="card sentiment-card">
+<div class="card-header">
+<h3 class="card-title">Overall Sentiment</h3>
+</div>
+<div class="card-body">
+<div class="metric-value">74%</div>
+<div>Positive Sentiment Score</div>
+<div class="chart-container">
+<div class="progress-container">
+<div class="progress-bar" style="width: 74%; background-color: #2ecc71;"></div>
+</div>
+<div class="progress-label">
+<span>Last Week: 68%</span>
+<span>+6%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="card calls-card">
+<div class="card-header">
+<h3 class="card-title">Calls Overview</h3>
+</div>
+<div class="card-body">
+<div class="metric-value">128</div>
+<div>Total Calls Today</div>
+<div class="chart-container">
+<div class="progress-container">
+<div class="progress-bar" style="width: 85%; background-color: #3498db;"></div>
+</div>
+<div class="progress-label">
+<span>Avg. Duration: 4:32</span>
+<span>85% Completion</span>
+</div>
+</div>
+</div>
+</div>
+<div class="card conversion-card">
+<div class="card-header">
+<h3 class="card-title">Conversion Rate</h3>
+</div>
+<div class="card-body">
+<div class="metric-value">31%</div>
+<div>Call to Test Drive Conversion</div>
+<div class="chart-container">
+<div class="progress-container">
+<div class="progress-bar" style="width: 31%; background-color: #f39c12;"></div>
+</div>
+<div class="progress-label">
+<span>Last Week: 27%</span>
+<span>+4%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sentiment Analysis Details -->
+<div class="card sentiment-analysis">
+<div class="card-header">
+<h3 class="card-title">Sentiment Analysis Breakdown</h3>
+</div>
+<div class="card-body">
+<div class="chart-container">
+<div class="sentiment-chart">
+<div class="sentiment-bar" style="height: 15%;">
+<div class="sentiment-label">Very Negative</div>
+</div>
+<div class="sentiment-bar" style="height: 25%;">
+<div class="sentiment-label">Negative</div>
+</div>
+<div class="sentiment-bar" style="height: 40%;">
+<div class="sentiment-label">Neutral</div>
+</div>
+<div class="sentiment-bar" style="height: 65%;">
+<div class="sentiment-label">Positive</div>
+</div>
+<div class="sentiment-bar" style="height: 85%;">
+<div class="sentiment-label">Very Positive</div>
+</div>
+</div>
+</div>
+<div style="margin-top: 30px;">
+<h4 class="section-title" style="margin-top: 60px;">Emotional Analysis</h4>
+<div style="display: flex; justify-content: space-between;">
+<div>
+<div class="progress-label">
+<span>Interest</span>
+<span>78%</span>
+</div>
+<div class="progress-container">
+<div class="progress-bar" style="width: 78%;"></div>
+</div>
+</div>
+<div>
+<div class="progress-label">
+<span>Confusion</span>
+<span>23%</span>
+</div>
+<div class="progress-container">
+<div class="progress-bar" style="width: 23%;"></div>
+</div>
+</div>
+<div>
+<div class="progress-label">
+<span>Objection</span>
+<span>42%</span>
+</div>
+<div class="progress-container">
+<div class="progress-bar" style="width: 42%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Phrases -->
+<div class="card key-phrases">
+<div class="card-header">
+<h3 class="card-title">Key Phrases &amp; Topics</h3>
+</div>
+<div class="card-body">
+<h4>Most Mentioned Topics</h4>
+<div class="tag-cloud">
+<div class="tag">Pricing (28)</div>
+<div class="tag">Fuel Economy (24)</div>
+<div class="tag">Trade-in Value (19)</div>
+<div class="tag">Financing Options (17)</div>
+<div class="tag">Safety Features (15)</div>
+<div class="tag">Electric Models (14)</div>
+<div class="tag">Warranty (12)</div>
+<div class="tag">Lease Options (9)</div>
+<div class="tag">Test Drive Availability (8)</div>
+</div>
+<h4 style="margin-top: 20px;">Customer Questions</h4>
+<div class="tag-cloud">
+<div class="tag">Available colors? (12)</div>
+<div class="tag">Monthly payments? (11)</div>
+<div class="tag">Delivery time? (8)</div>
+<div class="tag">MPG ratings? (7)</div>
+<div class="tag">Special offers? (6)</div>
+</div>
+</div>
+</div>
+<!-- Recent Calls -->
+<div class="card recent-calls">
+<div class="card-header">
+<h3 class="card-title">Recent Call Analytics</h3>
+</div>
+<div class="card-body">
+<table class="table">
+<thead>
+<tr>
+<th>Time</th>
+<th>Phone</th>
+<th>Duration</th>
+<th>Language</th>
+<th>Sentiment</th>
+<th>Vehicle Interest</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+  <tr><td>19:32:00</td><td>050123 4567</td><td>03:15:00</td><td>Dhevehi</td><td><span class="badge badge-success">Positive</span></td><td>E63 AMG</td><td>Awaiting Cheque</td></tr>
+  <tr><td>20:22:00</td><td>050123 4567</td><td>02:22:00</td><td>English</td><td><span class="badge badge-warning">Neutral</span></td><td>GLE 450</td><td>Awaiting Cheque</td></tr>
+  <tr><td>21:22:00</td><td>050123 4567</td><td>01:50:00</td><td>Russian</td><td><span class="badge badge-success">Positive</span></td><td>A 200</td><td>Awaiting Cheque</td></tr>
+  <tr><td>20:00:00</td><td>050123 4567</td><td>03:02:00</td><td>Azerbaijani</td><td><span class="badge badge-danger">Negative</span></td><td>N/A</td><td>Not Interested</td></tr>
+  <tr><td>22:23:00</td><td>050123 4567</td><td>03:12:00</td><td>French</td><td><span class="badge badge-warning">Neutral</span></td><td>C200 (Sedan)</td><td>Awaiting Cheque</td></tr>
+</tbody>
+</table>
+<h4 style="margin-top: 20px;">Sample Conversation</h4>
+<div class="conversation-sample">
+<div class="user">Hi, I'm interested in the GLC Coupe. Is it available in hybrid?</div>
+<div class="ai">Absolutely! The GLC Coupe is available in a mild-hybrid 4MATIC variant. Would you like to book a test drive or get a brochure?</div>
+<div class="user">Yes, please send me the brochure.</div>
+<div class="ai">Sure! I’ve just sent it to your WhatsApp. Let me know if you’d like to speak to a product advisor.</div>
+</div>
+</div>
+</div>
+<!-- Vehicle Interest -->
+<div class="card vehicle-interest">
+<div class="card-header">
+<h3 class="card-title">Vehicle Interest</h3>
+</div>
+<div class="card-body">
+<h4>Top Models</h4>
+<h4 style="margin-top: '0px'"></h4><div class="progress-label"><span>E 300 (Sedan)</span><span>33%</span></div><div class="progress-container"><div class="progress-bar" style="width: 33%;"></div></div><div class="progress-label"><span>EQS 580 4MATIC (Sedan)</span><span>26%</span></div><div class="progress-container"><div class="progress-bar" style="width: 26%;"></div></div><div class="progress-label"><span>G 63 AMG (SUV)</span><span>20%</span></div><div class="progress-container"><div class="progress-bar" style="width: 20%;"></div></div><div class="progress-label"><span>SL 55 AMG Roadster (Roadster)</span><span>13%</span></div><div class="progress-container"><div class="progress-bar" style="width: 13%;"></div></div><div class="progress-label"><span>GLA 200 (SUV)</span><span>6%</span></div><div class="progress-container"><div class="progress-bar" style="width: 6%;"></div></div></div>
+</div>
+</div>
+</body>
+</html>
